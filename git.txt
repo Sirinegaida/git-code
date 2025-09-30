@@ -1,0 +1,86 @@
+About
+projet de backend express et faire la connexion avec mongoose +envoie des requests de CRUD avec arrow functions +testing avec postman
+
+ tous les fichiers gitignore de tous les app: https://github.com/github/gitignore
+
+
+pour les projets node :https://github.com/github/gitignore/blob/main/Node.gitignore
+
+*********les étapes finales:dans projet de travaille
+git init 
+
+git add .
+
+git commit -m "first commit "  
+ 
+git branch -M main 
+
+git remote add origin lien repo
+
+
+git push -u origin main
+
+
+
+**create a local repository 
+mkdir projectsgit
+cd mkdir projectsgit 
+**clone a remote repository
+git clone <repository-url>
+
+**initiation 
+git init
+**visualiser la version de git 
+git --version 
+
+**statue de doossier 
+git status  
+
+**ajouter un fichier 
+
+git add  
+**ajouter plusieurs fichiers une seul fois 
+**git add .
+
+**savoir author identity 
+
+git commit 
+
+**annuler modification 
+git restore
+
+**pour savoir historique de git
+
+git log 
+
+**supprimer un fichier
+git rm -r --cashed <nom_de_fichier>
+
+**supprimer un fichier de historique de git 
+gir commit -m 'Remove node_modules from history'
+
+
+
+db.films.find({ "realisateur": "Scott Ridley" }).sort({ "titre": 1, "annee_sortie": 1 })
+db.films.createIndex({ "genre": 1 })
+db.films.find({ "genre": "Action" }).hint({ "genre": 1 })
+
+db.films.aggregate([
+    { $group: { _id: "$realisateur", NB_films: { $sum: 1 } } },
+    { $merge: "films" }
+])
+
+db.films.aggregate([
+    { $group: { _id: "$realisateur", NB_films: { $sum: 1 } } },
+    { $sort: { NB_films: -1 } },
+    { $limit: 1 }
+])
+
+
+db.films.deleteMany({ "annee_sortie": { $lt: 2000 } })
+
+
+
+
+
+
